@@ -14,21 +14,28 @@ use discord3682\netheritetools\item\NetheriteHoe;
 use pocketmine\plugin\PluginBase;
 use pocketmine\item\ItemFactory;
 use pocketmine\item\TieredTool;
+use pocketmine\item\Item;
 
 class NetheriteTools extends PluginBase
 {
 
   public function onLoad () : void
   {
-    ItemFactory::registerItem (new NetheriteSword (743, 0, 'Netherite Sword', TieredTool::TIER_DIAMOND));
-    ItemFactory::registerItem (new NetheriteShovel (744, 0, 'Netherite Shovel', TieredTool::TIER_DIAMOND));
-    ItemFactory::registerItem (new NetheritePickaxe (745, 0, 'Netherite Pickaxe', TieredTool::TIER_DIAMOND));
-    ItemFactory::registerItem (new NetheriteAxe (746, 0, 'Netherite Axe', TieredTool::TIER_DIAMOND));
-    ItemFactory::registerItem (new NetheriteHoe (747, 0, 'Netherite Hoe', TieredTool::TIER_DIAMOND));
+    foreach ([
+      new NetheriteSword (743, 0, 'Netherite Sword', TieredTool::TIER_DIAMOND),
+      new NetheriteShovel (744, 0, 'Netherite Shovel', TieredTool::TIER_DIAMOND),
+      new NetheritePickaxe (745, 0, 'Netherite Pickaxe', TieredTool::TIER_DIAMOND),
+      new NetheriteAxe (746, 0, 'Netherite Axe', TieredTool::TIER_DIAMOND),
+      new NetheriteHoe (747, 0, 'Netherite Hoe', TieredTool::TIER_DIAMOND),
 
-    ItemFactory::registerItem (new NetheriteHelmet (748, 0, 'Netherite Helmet'));
-    ItemFactory::registerItem (new NetheriteChestplate (749, 0, 'Netherite Chestplate'));
-    ItemFactory::registerItem (new NetheriteLeggings (750, 0, 'Netherite Leggings'));
-    ItemFactory::registerItem (new NetheriteBoots (751, 0, 'Netherite Boots'));
+      new NetheriteHelmet (748, 0, 'Netherite Helmet'),
+      new NetheriteChestplate (749, 0, 'Netherite Chestplate'),
+      new NetheriteLeggings (750, 0, 'Netherite Leggings'),
+      new NetheriteBoots (751, 0, 'Netherite Boots')
+    ] as $tool)
+    {
+      ItemFactory::registerItem ($tool);
+      Item::addCreativeItem ($tool);
+    }
   }
 }
