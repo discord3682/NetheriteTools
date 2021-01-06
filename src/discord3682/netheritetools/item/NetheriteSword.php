@@ -14,7 +14,7 @@ class NetheriteSword extends Sword
 
   public function getMaxDurability () : int
   {
-    return 2000;
+    return 2031;
   }
 
   public function getAttackPoints () : int

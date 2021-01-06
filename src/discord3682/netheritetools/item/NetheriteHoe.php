@@ -14,6 +14,6 @@ class NetheriteHoe extends Hoe
 
   public function getMaxDurability () : int
   {
-    return 2000;
+    return 2031;
   }
 }

@@ -14,6 +14,6 @@ class NetheriteShovel extends Shovel
 
   public function getMaxDurability () : int
   {
-    return 2000;
+    return 2031;
   }
 }
